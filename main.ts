@@ -49,6 +49,19 @@ const candidates: Candidate[] = [
     text: "WARNING: Return with the same number of passengers you left with. We count. So does history.",
     scores: [2, 2, 2, 2, 2], // extra passenger = duplicate self; ties the leader, loses on length
   },
+  // Pass 2: three challengers.
+  {
+    text: "NOTICE: Do not tell your past self about the lottery. He will spend it all before you exist.",
+    scores: [1, 1, 2, 1, 2], // "before you exist" lands, but it reads as advice, not a label
+  },
+  {
+    text: "WARNING: Seatbelts must be worn at all times, especially during the extinction events.",
+    scores: [2, 1, 2, 2, 2], // perfect notice-speak; the hazard is scenery, not turned
+  },
+  {
+    text: "CAUTION: In the event of a paradox, remain seated. Rescue teams can only find you once.",
+    scores: [2, 2, 2, 2, 1], // paradox turned well; "remain seated" spends words the winner doesn't
+  },
 ];
 
 function weightedTotal(c: Candidate): number {
